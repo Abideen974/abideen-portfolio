@@ -4,45 +4,32 @@ import { motion } from "framer-motion"
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100vh-64px)] items-center justify-center overflow-hidden py-20 px-4">
-      {/* Background Decorative Element */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_45%_at_50%_50%,var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent" />
-
-      <div className="text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-blue-500 mb-4">
-            Senior Frontend Engineer
-          </h2>
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-            Building digital <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
-              experiences
-            </span> that scale.
-          </h1>
-          <p className="mx-auto mt-6 max-w-[600px] text-lg text-muted-foreground sm:text-xl">
-            Hi, I&apos;m <span className="text-foreground font-medium">Abideen</span>. 
-            I specialize in architecting high-performance React applications with Next.js and TypeScript.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-10 flex flex-wrap justify-center gap-4"
-        >
-          <button className="h-12 px-8 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition-all">
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl"
+      >
+        <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">
+          Senior Frontend Engineer
+        </span>
+        <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-6 leading-[0.9]">
+          Building digital <br />
+          <span className="text-muted-foreground">that scale.</span>
+        </h1>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+          Hi, I&apos;m <span className="text-foreground">Abideen</span>. I specialize in architecting high-performance React applications with Next.js and TypeScript.
+        </p>
+        <div className="flex gap-4 justify-center">
+          <button className="bg-foreground text-background px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform">
             View Work
           </button>
-          <button className="h-12 px-8 rounded-full border border-border bg-background font-medium hover:bg-accent transition-all">
-            Download CV
+          <button className="border border-border px-8 py-4 rounded-full font-bold hover:bg-card transition-colors">
+            Contact Me
           </button>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   )
 }

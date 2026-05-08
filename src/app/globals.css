@@ -1,21 +1,42 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    /* ... more variables */
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-  }
+@theme {
+  /* This maps Tailwind's utility classes to our dynamic CSS variables */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
 }
 
-body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+/* 1. Light Mode Colors (Default) */
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #f4f4f5;
+  --border: #e4e4e7;
+  --accent: #3b82f6;
+}
+
+/* 2. Dark Mode Colors (When .dark class is on <html>) */
+.dark {
+  --background: #030303;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --border: #1f1f1f;
+  --accent: #3b82f6;
+}
+
+@layer base {
+  body {
+    /* Apply the variables to the body */
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased transition-colors duration-300;
+  }
+
+  * {
+    /* Ensure all borders use the dynamic variable */
+    border-color: var(--border);
+  }
 }
