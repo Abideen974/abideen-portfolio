@@ -39,10 +39,10 @@ export function Hero() {
         </p>
         
         <div className="flex flex-wrap gap-4 justify-center">
-          <button className="px-10 py-5 bg-white text-black rounded-full font-black hover:scale-105 transition-transform active:scale-95">
+          <button className="px-9 py-5 bg-white text-black rounded-full font-black hover:scale-105 transition-transform active:scale-95">
             View Work
           </button>
-          <button className="px-10 py-5 border border-white/10 bg-white/5 backdrop-blur-md rounded-full font-black hover:bg-white/10 transition-all">
+          <button className="px-9 py-5 border border-white/10 bg-white/5 backdrop-blur-md rounded-full font-black hover:bg-white/10 transition-all">
             Contact Me
           </button>
         </div>
