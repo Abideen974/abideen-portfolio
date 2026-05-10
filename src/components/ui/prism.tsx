@@ -201,7 +201,10 @@ const Prism = ({
     ro.observe(container); resize();
 
     const rotBuf = new Float32Array(9);
-    const setMat3FromEuler = (y, p, r, out) => {
+    const setMat3FromEuler = ( y: number,
+      p: number,
+      r: number,
+      out: Float32Array) => {
       const cy=Math.cos(y),sy=Math.sin(y),cx=Math.cos(p),sx=Math.sin(p),cz=Math.cos(r),sz=Math.sin(r);
       out[0]=cy*cz+sy*sx*sz; out[1]=cx*sz; out[2]=-sy*cz+cy*sx*sz;
       out[3]=-cy*sz+sy*sx*cz; out[4]=cx*cz; out[5]=sy*sz+cy*sx*cz;
@@ -215,7 +218,7 @@ const Prism = ({
     const stopRAF = () => { if (raf) cancelAnimationFrame(raf); raf = 0; };
 
     const pointer = { x: 0, y: 0, inside: true };
-    const render = t => {
+    const render = (t: number) => {
       const time = (t - t0) * 0.001;
       program.uniforms.iTime.value = time;
       if (animationType === '3drotate') {
